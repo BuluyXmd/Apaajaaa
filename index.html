@@ -1,52 +1,190 @@
 <!DOCTYPE html>
-
-<html lang="en">
-
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>website pertama</title>
+    <title>Website Pertama Saya</title>
     <link rel="shortcut icon" href="siimut.ico" type="image/x-icon">
+    <style>
         
-    <p> <h1>Oke guys,jadi ini adalah website pertama gw, jadi disini gw cuma coba coba aja</h1>
-       <ol>
-    link 1
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e0f7fa;
+            color: #00796b;
+            margin: 0;
+            padding: 0;
+        }
 
-       </ol>
-</p>
+        /* Gaya untuk header */
+        header {
+            text-align: center;
+            padding: 20px;
+            background-color: #004d40;
+            color: white;
+        }
 
-    <img src="WIN_20241026_11_16_15_Pro.jpg" width="130px">
-    
-    <link rel="stylesheet" type="text/css" href="LO.css">
+        header nav {
+            margin-top: 10px;
+        }
 
-    <a href="images (2).jpeg"
-         download="foto">unduh foto</a>
-    
-    <audio controls>
-      <source src="Snaptik.app_74327270932904706621.mp3" type="audio/mpeg">
-    </audio>
-    
-    <a href="VID-20241031-WA0027.mp3"download>unduh sound</a>
-    <a href="images (1).jpeg"target="_blank">lihat gambar</a>
-    <a href="rusdi kewer kewer woilah.mp4"target="_blank">video joget ngakak banget🤣😂</a>
+        header nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+            font-weight: bold;
+        }
 
-    <a href="i8ZvbOGb1.mp4.3gpp"
-         download="Videojd.mp4">unduh video</a>
+        header nav a:hover {
+            text-decoration: underline;
+        }
 
-  <ul>
-       <li>Video Terbaru Dari Kami => <a href="SpankBang.com_ambatukam_480p.mp4"target="_blank=">terbaru</a></li>
-       <li>Oshi sesuai bulan kelahiran,btw atmin desember loh ya => <a href="Oshi sesuai bulan kelahiran.mp4"target="_blank=">Oshi</a></li>
-  </ul>
+        /* Gaya untuk konten utama */
+        main {
+            padding: 20px;
+        }
 
-    <a href="Top 3 horror ngawi.html">Top Horrow Ngawi</a>
-    
-    <p> 
-        follow
-         <a 
-             href="https://www.instagram.com/hafizxzzzz?igsh=MXg0M2Y1MHI3MzkxcA=="target="_blank"> ig gw</a>
-         yang ga follow gw sumpahin mati
-    </p>
-    
+        a {
+            color: #00796b;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        ul {
+            list-style-type: square;
+            padding-left: 20px;
+        }
+
+        .warning {
+            color: red;
+            font-weight: bold;
+        }
+
+        /* Gaya untuk footer */
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #004d40;
+            color: white;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+
+        /* Gaya modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.7);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            width: 80%;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        .close-btn {
+            color: red;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .close-btn:hover {
+            text-decoration: underline;
+        }
+    </style>
+    <script>
+        // Fungsi untuk menampilkan modal
+        function showModal() {
+            document.getElementById("infoModal").style.display = "flex";
+        }
+
+        // Fungsi untuk menutup modal
+        function closeModal() {
+            document.getElementById("infoModal").style.display = "none";
+        }
+
+        // Fungsi untuk menampilkan peringatan saat follow Instagram
+        function followIG() {
+            alert("Terima kasih sudah follow IG saya!");
+        }
+    </script>
 </head>
 <body>
     
+    <header>
+        <h1>Website Pertama Saya</h1>
+        <p>Selamat datang di website pertama saya, ini hanya percobaan!</p>
+        <nav>
+            <a href="Loginn.html">Login</a>
+            <a href="Register.html">Register</a>
+        </nav>
+    </header>
+
+   
+    <main>
+        <h2>Konten</h2>
+        <button onclick="showModal()">Lihat Info Penting</button>
+
+        <p>
+            <img src="WIN_20241026_11_16_15_Pro.jpg" width="150" alt="Gambar kecil">
+        </p>
+        <ul>
+            <li><a href="images (2).jpeg" download>Unduh Foto</a></li>
+            <li>
+                <audio controls>
+                    <source src="Snaptik.app_74327270932904706621.mp3" type="audio/mpeg">
+                    Browser Anda tidak mendukung pemutar audio.
+                </audio>
+                <a href="VID-20241031-WA0027.mp3" download>Unduh Sound</a>
+            </li>
+            <li><a href="images (1).jpeg" target="_blank">Lihat Gambar</a></li>
+            <li><a href="rusdi kewer kewer woilah.mp4" target="_blank">Video Joget Ngakak</a></li>
+            <li><a href="i8ZvbOGb1.mp4.3gpp" download>Unduh Video</a></li>
+        </ul>
+
+        <h2>Video dan Informasi</h2>
+        <ul>
+            <li>Video Terbaru: <a href="SpankBang.com_ambatukam_480p.mp4" target="_blank">Tonton</a></li>
+            <li>Oshi Bulan Kelahiran: <a href="Oshi sesuai bulan kelahiran.mp4" target="_blank">Lihat</a></li>
+        </ul>
+
+        <p>
+            Topik menarik lainnya: <a href="Top 3 horror ngawi.html">Top Horror Ngawi</a>
+        </p>
+
+        <p class="warning">
+            Jangan lupa follow Instagram saya: 
+            <a href="https://www.instagram.com/hafizxzzzz?igsh=MXg0M2Y1MHI3MzkxcA==" target="_blank" onclick="followIG()">IG Saya</a>.
+        </p>
+    </main>
+    
+    
+    <div id="infoModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">Tutup</span>
+            <h3>Info Penting</h3>
+            <p>Terima kasih telah mengunjungi website ini! Semoga harimu menyenangkan!</p>
+        </div>
+    </div>
+
+    
+    <footer>
+        &copy; 2024 Website Pertama Saya. Dibuat untuk belajar.
+    </footer>
+</body>
+</html>
