@@ -1,102 +1,123 @@
 <!doctype html>
 <html lang="en"> 
- <head> 
+<head> 
   <meta charset="UTF-8"> 
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
   <title>Top 3 Horror Movies</title> 
-  <link rel="stylesheet" href="style.css"> 
- <style type="text/css" id="dcoder_stylesheet">body {
-    font-family: Arial, sans-serif;
-    background-color: #111;
-    color: #fff;
-    text-align: center;
-    margin: 0;
-    padding: 0;
-}
-
-.container {
-    padding: 20px;
-}
-
-h1 {
-    font-size: 2.5em;
-    margin-bottom: 20px;
-    color: #ff4747;
-}
-
-#movies {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-.movie {
-    background-color: #222;
-    border-radius: 10px;
-    margin: 15px;
-    padding: 20px;
-    width: 250px;
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
-}
-
-.movie img {
-    width: 100%;
-    border-radius: 10px;
-}
-
-.movie h2 {
-    font-size: 1.5em;
-    margin: 15px 0;
-}
-
-.movie p {
-    font-size: 1em;
-    color: #ccc;
-}</style></head> 
- <body> 
-  <div class="container"> 
-   <h1>Top 3 Horror Movies</h1> 
-   <div id="movies"> <!-- Film akan dimasukkan melalui JavaScript --> 
-   </div> 
-  </div> 
-  <script src="script.js"></script> 
- 
-<script type="text/javascript" id="dcoder_script">const movies = [
-    {
-        title: "Ambacong desa pocong",
-        year: 2024,
-        image: "ambacong.jpg",
-        description: "Ambacon desa pocong adalah film horor Indonesia yang menceritakan kisah sebuah desa terpencil yang dikenal dengan nama Desa Pocong. Di desa ini, terjadi berbagai kejadian aneh dan mistis yang melibatkan kemunculan pocong, sosok hantu dalam mitologi Indonesia yang dipercaya sebagai roh orang yang telah meninggal namun masih terbungkus kain kafan.Film ini mengikuti sekelompok orang yang secara tidak sengaja terperangkap di desa tersebut dan harus menghadapi teror yang menghantui mereka setiap malam. Dengan atmosfer yang mencekam, suasana pedesaan yang sunyi, dan serangkaian peristiwa menyeramkan,membawa penonton pada ketegangan yang terus meningkat.Selain unsur horor, film ini juga mengangkat tema mistik dan kearifan lokal, di mana rahasia kelam dari desa tersebut perlahan-lahan terungkap seiring berjalannya cerita. Para karakter harus menemukan cara untuk selamat dan melarikan diri dari cengkraman kekuatan gaib yang melanda Desa Pocong."
-
-
-
-    },
-    {
-        title: "Pusaka Ngawi",
-        year: 1979,
-        image: "pusaka ngawi.jpg",
-        description: "FILM PUSAKA NGAWI FILM YANG DI RILIS TAHUN 1979 FILM INI DI ANGGAP SEBAGAI FILM HORROR TERKUTUK. KARENA RATA RATA YANG MENONTON FILM INI TEWAS MENGENASKAN DAN SUTRADARA YANG BERNAMA MAS FAIZ PUN TEWAS DENGAN KEPALA YANG SUDAH TERPISAH, DAN AKTOR NYA PUN YANG BERNAMA AMBATU JHON IKUT MENGHILANG DAN BELUM DI TEMUKAN SAMPAI SEKARANG FILM PUSAKA NGAWI DI TUTUP SECARA RESMI PADA TAHUN 2009 KARNA BANYAK NYA PENONTON YANG TEWAS MENGENASKAN DAN MENGHILANG TANPA KABAR"
-
-    },
-    {
-        title: "Ambaruwo",
-        year: 2024,
-        image: "ambaruwo1.jpg",
-        description:  "Ambaruwo adalah film horor Indonesia yang menghadirkan teror dari mitologi lokal yang jarang diangkat ke layar lebar. Film ini bercerita tentang legenda Ambaruwo, makhluk gaib yang dipercaya menghuni hutan terlarang di sebuah desa terpencil. Sosok ini digambarkan sebagai makhluk menyeramkan dengan kekuatan mistis, yang dikenal dapat menghantui dan mengambil nyawa mereka yang berani melanggar batas terlarang.Cerita dimulai ketika sekelompok peneliti muda datang ke desa tersebut untuk meneliti flora dan fauna unik yang ada di hutan. Namun, mereka tidak mengindahkan peringatan penduduk setempat untuk menjauh dari area terlarang. Ketika mereka semakin dalam memasuki hutan, serangkaian kejadian mengerikan mulai terjadi, mengisyaratkan kehadiran Ambaruwo yang tidak senang dengan kehadiran manusia di wilayahnya.Ambaruwo menyajikan ketegangan dengan atmosfer hutan yang gelap dan misterius, suara-suara aneh, serta visual makhluk yang mengerikan. Film ini tidak hanya menawarkan jumpscares, tetapi juga menggali lebih dalam ke dalam tradisi dan mitos desa setempat. Karakter utama harus berjuang untuk bertahan hidup sambil mencoba memahami legenda di balik Ambaruwo, sebelum semuanya terlambat."
+  <style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #111;
+        color: #fff;
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden; /* Hilangkan scroll horizontal */
     }
-];
 
-const moviesContainer = document.getElementById('movies');
+    .container {
+        padding: 20px;
+        max-width: 1200px;
+        margin: auto;
+    }
 
-movies.forEach(movie => {
-    const movieDiv = document.createElement('div');
-    movieDiv.classList.add('movie');
+    h1 {
+        font-size: 2.5em;
+        margin-bottom: 20px;
+        color: #ff4747;
+    }
 
-    movieDiv.innerHTML = `
-        <img src="${movie.image}" alt="${movie.title}">
-        <h2>${movie.title} (${movie.year})</h2>
-        <p>${movie.description}</p>
-    `;
+    #movies {
+        display: flex;
+        flex-direction: column; /* Konten disusun vertikal */
+        align-items: center;
+        gap: 20px;
+    }
 
-    moviesContainer.appendChild(movieDiv);
-});</script></body></html>
+    .movie {
+        background-color: #222;
+        border-radius: 10px;
+        padding: 20px;
+        width: 90%; /* Sesuaikan lebar agar responsif */
+        max-width: 600px;
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+    }
+
+    .movie img {
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+    }
+
+    .movie h2 {
+        font-size: 1.5em;
+        margin: 15px 0;
+    }
+
+    .movie p {
+        font-size: 1em;
+        color: #ccc;
+        text-align: justify; /* Buat deskripsi lebih rapi */
+    }
+
+    footer {
+        margin-top: 20px;
+        padding: 10px;
+        text-align: center;
+        background-color: #222;
+        color: #ccc;
+        font-size: 0.9em;
+    }
+  </style>
+</head> 
+<body> 
+  <div class="container"> 
+    <h1>Top 3 Horror Movies</h1> 
+    <div id="movies"></div>
+  </div> 
+  <footer>
+    © 2024 Horror Movie Enthusiasts
+  </footer>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const movies = [
+            {
+                title: "Ambacong Desa Pocong",
+                year: 2024,
+                image: "ambacong.jpg",
+                description: "Ambacong Desa Pocong adalah film horor Indonesia yang menceritakan kisah sebuah desa terpencil yang dikenal dengan nama Desa Pocong. Di desa ini, terjadi berbagai kejadian aneh dan mistis yang melibatkan kemunculan pocong..."
+            },
+            {
+                title: "Pusaka Ngawi",
+                year: 1979,
+                image: "pusaka_ngawi.jpg",
+                description: "Film Pusaka Ngawi dianggap sebagai film horror terkutuk karena rata-rata yang menonton tewas mengenaskan..."
+            },
+            {
+                title: "Ambaruwo",
+                year: 2024,
+                image: "ambaruwo.jpg",
+                description: "Ambaruwo adalah film horor Indonesia yang menghadirkan teror dari mitologi lokal yang jarang diangkat ke layar lebar..."
+            }
+        ];
+
+        const moviesContainer = document.getElementById('movies');
+        if (moviesContainer) {
+            movies.forEach(movie => {
+                const movieDiv = document.createElement('div');
+                movieDiv.classList.add('movie');
+
+                movieDiv.innerHTML = `
+                    <img src="${movie.image}" alt="${movie.title}">
+                    <h2>${movie.title} (${movie.year})</h2>
+                    <p>${movie.description}</p>
+                `;
+
+                moviesContainer.appendChild(movieDiv);
+            });
+        } else {
+            console.error('Movies container not found!');
+        }
+    });
+  </script>
+</body>
+</html>
