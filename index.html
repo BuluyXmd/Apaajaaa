@@ -6,7 +6,6 @@
     <title>Website Pertama Saya</title>
     <link rel="shortcut icon" href="siimut.ico" type="image/x-icon">
     <style>
-        /* Gaya dasar */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -17,17 +16,15 @@
             animation: moveBackground 20s linear infinite;
         }
 
-        /* Animasi untuk background bergerak */
         @keyframes moveBackground {
             0% {
                 background-position: 0 0;
             }
             100% {
-                background-position: -2000px 0; /* Sesuaikan dengan ukuran gambar */
+                background-position: -2000px 0;
             }
         }
 
-        /* Header */
         header {
             text-align: center;
             padding: 20px;
@@ -45,7 +42,6 @@
             text-decoration: underline;
         }
 
-        /* Konten utama */
         main {
             padding: 20px;
             background-color: rgba(0, 0, 0, 0.6);
@@ -73,7 +69,6 @@
             font-weight: bold;
         }
 
-        /* Footer */
         footer {
             text-align: center;
             padding: 10px;
@@ -83,7 +78,6 @@
             bottom: 0;
         }
 
-        /* Gaya gambar kecil */
         img {
             width: 150px;
             height: auto;
@@ -91,7 +85,6 @@
             animation: bounce 2s infinite;
         }
 
-        /* Keyframes untuk animasi */
         @keyframes bounce {
             0%, 100% {
                 transform: translateY(0);
@@ -100,28 +93,70 @@
                 transform: translateY(-10px);
             }
         }
+
+        .video-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 20px 0;
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .video-container video {
+            border: 2px solid #fff;
+            border-radius: 10px;
+        }
+
+        .video-container button {
+            margin-top: 10px;
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .video-container button:hover {
+            background-color: #45a049;
+        }
     </style>
     <script>
-        // Fungsi untuk menampilkan modal
         function showModal() {
             const modal = document.getElementById("infoModal");
             modal.style.display = "flex";
         }
 
-        // Fungsi untuk menutup modal
         function closeModal() {
             const modal = document.getElementById("infoModal");
             modal.style.display = "none";
         }
-
-        // Fungsi untuk menampilkan peringatan saat follow Instagram
+        
         function followIG() {
             alert("Terima kasih sudah follow IG saya!");
+        }
+
+        function playVideo(videoId) {
+            const video = document.getElementById(videoId);
+            if (video.paused) {
+                video.play();
+            } else {
+                video.pause();
+            }
+        }
+        
+        function resetVideo(videoId) {
+            const video = document.getElementById(videoId);
+            video.currentTime = 0;
+            video.pause();
         }
     </script>
 </head>
 <body>
-    <!-- Header -->
     <header>
         <h1>Website Pertama Saya</h1>
         <p>Selamat datang di website pertama saya, ini hanya percobaan!</p>
@@ -131,7 +166,6 @@
         </nav>
     </header>
 
-    <!-- Konten Utama -->
     <main>
         <h2>Konten</h2>
         <button onclick="showModal()">Lihat Info Penting</button>
@@ -159,6 +193,20 @@
             <li>Oshi Bulan Kelahiran: <a href="Oshi sesuai bulan kelahiran.mp4" target="_blank">Lihat</a></li>
         </ul>
 
+        <h3>Video Favorit</h3>
+        <div class="video-container">
+            <div>
+                <video id="myVideo" controls width="100%" style="max-width: 600px;">
+                    <source src="rusdi kewer kewer woilah.mp4" type="video/mp4">
+                    Browser Anda tidak mendukung pemutar video.
+                </video>
+                <div style="text-align: center;">
+                    <button onclick="playVideo('myVideo')">Putar/Jeda</button>
+                    <button onclick="resetVideo('myVideo')">Reset</button>
+                </div>
+            </div>
+        </div>
+
         <p>
             Topik menarik lainnya: <a href="Top 3 horror ngawi.html">Top Horror Ngawi</a>
         </p>
@@ -169,16 +217,14 @@
         </p>
     </main>
 
-    <!-- Modal -->
-    <div id="infoModal" class="modal">
-        <div class="modal-content">
+    <div id="infoModal" class="modal" style="display:none;">
+        <div class="modal-content" style="background: #fff; color: #000; padding: 20px; border-radius: 5px;">
             <span class="close-btn" onclick="closeModal()">Tutup</span>
             <h3>Info Penting</h3>
             <p>Terima kasih telah mengunjungi website ini! Semoga harimu menyenangkan!</p>
         </div>
     </div>
 
-    <!-- Footer -->
     <footer>
         &copy; 2024 Website Pertama Saya. Dibuat untuk belajar.
     </footer>
