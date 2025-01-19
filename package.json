@@ -8,8 +8,17 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": "",
   "dependencies": {
     "node-telegram-bot-api": "^0.66.0"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BuluyXmd/Apaajaaa.git"
+  },
+  "bugs": {
+    "url": "https://github.com/BuluyXmd/Apaajaaa/issues"
+  },
+  "homepage": "https://github.com/BuluyXmd/Apaajaaa#readme",
+  "description": ""
 }
